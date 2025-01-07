@@ -11,4 +11,4 @@ src - different models ,codes for comparing the model accuracy
 
 templates -  static files of user Interface 
 
-segmentation.py - segmentation of the images with feature extraction , HERE USE YOUR API KEY AND API URL
+segmentation.py - segmentation of the images with feature extraction , HERE USE YOUR API KEY AND MODEL ID 
