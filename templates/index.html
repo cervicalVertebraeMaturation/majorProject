@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image</title>
+    <style>
+            @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;1,100&display=swap');
+
+        body {
+            font-family: 'Roboto',monospace; /* Use a clean, sans-serif font */
+background: radial-gradient(circle, rgba(150, 160, 170, 1) 0%, rgba(70, 80, 90, 1) 50%, rgba(40, 50, 60, 1) 100%);
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Full viewport height */
+        }
+
+        .container {
+            background-color: #fff; /* White background for the form */
+            padding: 40px; /* Increased padding around the content */
+            border-radius: 12px; /* More pronounced rounded corners */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow for better depth */
+            text-align: center; /* Center text */
+            width: 400px; /* Increased width for the container */
+            max-width: 90%; /* Responsive maximum width */
+        }
+
+        h1 {
+            margin-bottom: 30px; /* Space below the heading */
+            font-size: 28px; /* Larger font size for the heading */
+            color: #333; /* Darker text color */
+        }
+
+        input[type="file"] {
+            margin: 15px 0; /* Space above and below the file input */
+            padding: 12px; /* Increased padding inside the file input */
+            border: 1px solid #ddd; /* Light border */
+            border-radius: 4px; /* Rounded corners for the input */
+            width: 100%; /* Full width of the container */
+            box-sizing: border-box; /* Include padding and border in width */
+            font-size: 16px; /* Increased font size for readability */
+            transition: border-color 0.3s; /* Smooth transition for border color */
+        }
+
+        input[type="file"]:focus {
+            border-color: #4CAF50; /* Highlight border on focus */
+            outline: none; /* Remove default outline */
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50; /* Green background for the button */
+            color: white; /* White text */
+            border: none; /* Remove border */
+            border-radius: 4px; /* Rounded corners */
+            padding: 12px; /* Increased padding inside the button */
+            cursor: pointer; /* Pointer cursor on hover */
+            width: 100%; /* Full width of the container */
+            font-size: 18px; /* Larger font size for the button */
+            transition: background-color 0.3s; /* Smooth transition for background color */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+        p{
+            display: none;
+            margin: 0;
+            /* color: #45a049; */
+        }
+    </style>
+    <script>
+        function loading(){
+            load=document.querySelector("#load")
+          
+            load.style.display="block"
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload an Image</h1>
+        <form action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data"> <!-- Change the action here -->
+            <input type="file" name="file" accept="image/*" required>
+            <input type="submit" value="Upload" onclick="loading()">
+            
+        </form>
+        <p id="load">loading... please wait</p>
+    </div>
+</body>
+</html>

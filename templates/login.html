@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;1,100&display=swap');
+
+        body {
+            background-image: url('/static/boneimg.png');            
+            background-size: cover; /* Fills the entire screen */
+            background-position: center;
+            background-repeat: no-repeat;
+            color: rgb(255, 255, 255);
+            margin-left: 40px;
+        }
+
+        h1 {
+            font-size: 100px;
+            margin-bottom: 0;
+            font-weight: bolder;
+        }
+
+        .about p {
+            font-size: 16px;
+            width: 530px;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 300px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            color: black;
+            font-weight: bolder;
+            font-family: 'Roboto Mono';
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        label {
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .mess {
+            color: red; /* Error message color */
+            font-size: 15px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="about">
+            <h1>About Us</h1>
+            <p>Welcome to our platform, where we use advanced imaging and machine learning to estimate age based on cervical vertebrae analysis. Our technology provides accurate skeletal age assessments from X-ray images, offering valuable insights for medical and research purposes. Discover the power of our solution in understanding bone health and development.</p>
+        </div>
+        <div>
+            <form action="/" method="POST">
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required><br>
+
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required><br>
+
+                <!-- Display error message if provided by Flask -->
+                {% if error %}
+    <p class="mess" style="margin-top: -10px;">{{ error }}</p>
+{% endif %}
+                
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+    "Mean Squared Error": 9.788031205781389,
+    "Mean Absolute Error": 2.0048034343313663,
+    "Root Mean Squared Error": 3.128582938932799,
+    "R-squared": 0.3626035451889038,
+    "Confusion Matrix": [
+        [
+            30,
+            4
+        ],
+        [
+            4,
+            9
+        ]
+    ],
+    "Accuracy": 82.97872340425532
+}
