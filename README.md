@@ -1,5 +1,6 @@
 # majorProject
 
+
 #install the all the dependencies by executing requirement.txt 
 
 app1.py - Serving Flask app 
